@@ -7,7 +7,7 @@
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
 
-return if Rails.env != "development"
+# return if Rails.env != "development"
 
 
 max_cards = 100
