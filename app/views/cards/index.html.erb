@@ -1,5 +1,9 @@
 <%= heading("カード一覧") %>
 
+<div class="page-header">
+	<h2><small>カード総数: </small> <%= @cards.size.to_s %></h2>
+</div>
+
 <table class="table table-striped">
 <%= showCardHeader() %>
 <% @cards.each do |card| %>

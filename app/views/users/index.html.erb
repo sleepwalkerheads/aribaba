@@ -1,5 +1,9 @@
 <%= heading("ユーザー一覧") %>
 
+<div class="page-header">
+	<h2><small>ユーザー総数: </small> <%= @users.size.to_s %></h2>
+</div>
+
 <table class="table table-striped">
 <tr>
 	<th>id</th>
@@ -20,4 +24,4 @@
 
 <br />
 
-<%= link_to 'New User', new_user_path, :class=>'btn btn-primary' %>
+<!-- <%= link_to 'New User', new_user_path, :class=>'btn btn-primary' %> -->

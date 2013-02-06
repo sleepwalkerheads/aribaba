@@ -1,0 +1,56 @@
+<%= heading("現在activeなカード") %>
+
+<%= render 'shared/home_nav' %>
+
+
+<div class="alert alert-info">
+<h2>検索方法</h2>
+<ul>
+	<li>緯度経度、 latitudeDelta/longitudeDeltaを全部入力してください。</li>
+	<li>全て数字で入力して下さい。 0.0のままはダメです！</li>
+	<li><small>(例: 大垣) 35.35881619143943, 136.614990234375</small></li>
+</ul>
+</div>
+
+
+
+<form action="/active_cards" method="get" accept-charset="utf-8">
+<table>
+	<tr>
+		<td><label>latitude <input type="text" name="lat" value="<%= @lat %>"></label></td>
+		<td><label>longitude <input type="text" name="lon" value="<%= @lon %>"></label></td>
+		<td><label>latitudeDelta 	<input type="text" name="latDelta" value="<%= @latDelta %>"></label></td>
+		<td><label>longitudeDelta 	<input type="text" name="lonDelta" value="<%= @lonDelta %>"></label></td>
+		<td><input type="submit" value="Go" class="btn btn-primary"></td>
+		<td><a class="btn" href="/active_cards?show=all">All</a></td>
+	</tr>
+</table>
+</form>
+
+<div class="page-header">
+	<h2><small>検索結果: </small> <%= @cards.size.to_s %></h2>
+</div>
+
+<% if !@has_error || @show_all  %>
+
+	<table class="table table-bordered">
+		<tr>
+			<% if @show_all %>
+				<th>緯度</th><td>すべて</td>
+				<th>経度</th><td>すべて</td>
+			<% else %>
+				<th>緯度</th><td><%= @lat_min %> ~ <%= @lat_max %></td>
+				<th>経度</th><td><%= @lon_min %> ~ <%= @lon_max %></td>
+			<% end %>
+		</tr>
+	</table>
+
+
+	<table class="table table-striped">
+	<%= showCardHeader() %>
+	<% @cards.each do |card| %>
+		<%= showCard(card) %>
+	<% end %>
+	</table>
+
+<% end %>

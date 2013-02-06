@@ -14,6 +14,7 @@ module ApplicationHelper
       <th>Character</th>
       <th>Comment</th>
       <th>Latitude, Longitude</th>
+      <th>Active?</th>
       <th></th>
       <th></th>
       <th></th>
@@ -27,12 +28,14 @@ module ApplicationHelper
     
     mId = card.id.to_s
     mCreatedBy = card.user.username.to_s
+    # mCreatedBy = "tets"
     mPlayerName = card.player_name.to_s
     mGameTitle = card.game_title.to_s
     mCharacter = card.character.to_s
     mComment = card.comment.to_s
     mLatitude = card.latitude.to_s
     mLongitude = card.longitude.to_s
+    mActive = card.active
     
     html = []
     html << '<tr>'
@@ -43,6 +46,7 @@ module ApplicationHelper
     html << '<td>'+ mCharacter +'</td>'
     html << '<td>'+ mComment +'</td>'
     html << '<td>'+ mLatitude + ", " + mLongitude +'</td>'
+    html << '<td>'+ (mActive ? '<span class="active">active</span>' : '<span class="inactive">inactive</span>') +'</td>'
     html << '<td>'+ (link_to 'Show card', card) +'</td>'
     html << '<td>'+ (link_to 'Edit', edit_card_path(card)) +'</td>'
     html << '<td>'+ (link_to 'Delete', card, :method => :delete, :data => { :confirm => 'Are you sure?' }) +'</td>'

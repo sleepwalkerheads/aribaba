@@ -23,7 +23,9 @@
 
 <% if current_user %>
 <ul class="nav pull-right">
-<li class="divider-vertical"></li>
+<li class="active">
+<%= link_to "Hello, "+current_user.username, current_user %>
+</li>
 <li class="">
 <%= link_to 'Sign out', :destroy_user_session %>
 </li>

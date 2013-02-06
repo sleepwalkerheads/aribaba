@@ -1,7 +1,10 @@
 <%= heading("Hello, " + current_user.username + "!") %>
 
+<%= render 'shared/home_nav' %>
+
+
 <div class="page-header">
-	<h2>あなたのカード一覧</h2>
+	<h2><small>あなたのカード総数: </small> <%= @cards.size.to_s %></h2>
 </div>
 
 <table class="table table-striped">

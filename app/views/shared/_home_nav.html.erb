@@ -1,0 +1,4 @@
+<ul class="nav nav-pills">
+	<li<%= (controller.action_name == "index") 		  ? ' class=active' : '' %>><%= link_to "My cards", :user_root %></li>
+	<li<%= (controller.action_name == "active_cards") ? ' class=active' : '' %>><%= link_to "Activeなカード", :active_cards %></li>
+</ul>

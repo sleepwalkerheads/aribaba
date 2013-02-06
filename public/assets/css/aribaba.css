@@ -35,3 +35,6 @@
 {
 	margin-bottom:20px;
 }
+
+.active{ color:green; }
+.inactive{ color:red; }
