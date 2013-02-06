@@ -1,0 +1,47 @@
+<%= heading("カード詳細") %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Player name:</b>
+  <%= @card.player_name %>
+</p>
+
+<p>
+  <b>Game title:</b>
+  <%= @card.game_title %>
+</p>
+
+<p>
+  <b>Character:</b>
+  <%= @card.character %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @card.comment %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @card.user.id %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @card.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @card.longitude %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @card.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

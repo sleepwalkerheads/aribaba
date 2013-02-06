@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Koyama</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link href="/assets/css/bootstrap.css" rel="stylesheet">
+<link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="/assets/css/aribaba.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<%= csrf_meta_tags %>
+</head>
+
+<body>
+<%= render 'shared/header' %>
+
+<div id="container" class="container-<%= controller.controller_name %>">
+<% if notice != nil %>
+	<p class="alert alert-info"><%= notice %></p>
+<% end %>
+
+<% if alert != nil %>
+	<p class="alert"><%= alert %></p>
+<% end %>
+
+<%= yield %>
+<%= render 'shared/footer'  %>
+</div><!-- /#container -->
+</body>
+</html>

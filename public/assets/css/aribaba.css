@@ -1,0 +1,37 @@
+#container
+{
+	width:980px;
+	margin:0 auto;
+	padding-top:60px;
+}
+
+/**
+ *	form
+ *	------------------------------------------------------
+ */
+.field_with_errors
+{
+	color:red;
+}
+.field_with_errors *
+{
+	border-color:red !important;
+}
+
+/**
+ *	form::card
+ *	------------------------------------------------------
+ */
+.container-cards input,
+.container-cards textarea
+{
+	width:300px;
+}
+.container-cards #card_comment
+{
+	height:200px !important;
+}
+.container-cards div.field
+{
+	margin-bottom:20px;
+}

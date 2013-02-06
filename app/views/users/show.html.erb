@@ -1,0 +1,46 @@
+<%= heading("ユーザー: " + @user.username) %>
+
+<p id="notice"><%= notice %></p>
+
+
+<div class="page-header">
+	<h2><small>所有カード数: </small><%= @user.cards.size.to_s %></h2>
+</div>
+
+<table class="table table-striped">
+<%= showCardHeader() %>
+<% @user.cards.each do |card| %>
+<%= showCard(card) %>
+<% end %>
+</table>
+
+
+
+<hr>
+
+
+<div class="page-header">
+	<h2><small>アカウント情報: </small><%= @user.username %></h2>
+</div>
+
+<table class="table table-striped">	
+
+<tr><th>id</th><td><%= @user.id %></td></tr>
+<tr><th>ユーザー名</th><td><%= link_to @user.username, @user %></td></tr>
+<tr><th>Email</th><td><%= @user.email %></td></tr>
+<tr><th>所有カード数</th><td><%= @user.cards.size.to_s %></td></tr>
+<tr><th>encrypted_password</th><td><%= @user.encrypted_password %></td></tr>
+<tr><th>reset_password_token</th><td><%= @user.reset_password_token %></td></tr>
+<tr><th>reset_password_sent_at</th><td><%= @user.reset_password_sent_at %></td></tr>
+<tr><th>remember_created_at</th><td><%= @user.remember_created_at %></td></tr>
+<tr><th>sign_in_count</th><td><%= @user.sign_in_count %></td></tr>
+<tr><th>current_sign_in_at</th><td><%= @user.current_sign_in_at %></td></tr>
+<tr><th>last_sign_in_at</th><td><%= @user.last_sign_in_at %></td></tr>
+<tr><th>current_sign_in_ip</th><td><%= @user.current_sign_in_ip %></td></tr>
+<tr><th>last_sign_in_ip</th><td><%= @user.last_sign_in_ip %></td></tr>
+<tr><th>created_at</th><td><%= @user.created_at %></td></tr>
+<tr><th>updated_at</th><td><%= @user.updated_at %></td></tr>
+</table>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,23 @@
+<%= heading("ユーザー一覧") %>
+
+<table class="table table-striped">
+<tr>
+	<th>id</th>
+	<th>ユーザー名</th>
+	<th>Email</th>
+	<th>所有カード数</th>
+</tr>
+
+<% @users.each do |user| %>
+<tr>
+	<td><%= user.id %></td>
+	<td><%= link_to user.username, user %></td>
+	<td><%= user.email %></td>
+	<td><%= user.cards.size.to_s %></td>
+</tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path, :class=>'btn btn-primary' %>

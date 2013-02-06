@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: cards
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  player_name :string(255)
+#  game_title  :string(255)
+#  character   :string(255)
+#  comment     :text
+#  latitude    :float
+#  longitude   :float
+#  active      :boolean
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  player_name: MyString
+  game_title: MyString
+  character: MyString
+  comment: MyText
+  user: MyString
+  latitude: 1.5
+  longitude: 1.5
+  active: false
+
+two:
+  player_name: MyString
+  game_title: MyString
+  character: MyString
+  comment: MyText
+  user: MyString
+  latitude: 1.5
+  longitude: 1.5
+  active: false

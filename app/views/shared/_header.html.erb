@@ -1,0 +1,37 @@
+<!-- Navbar
+================================================== -->
+
+
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<% if current_user %>
+<%= link_to( 'aribaba db', :user_root, :class=>'brand') %>
+<% else %>
+<%= link_to( 'aribaba db', :root, :class=>'brand') %>
+<% end %>
+
+<div class="nav-collapse collapse">
+<% if current_user %>	
+<ul class="nav">
+<li<%= putActiveClass("home") %>><%= link_to 'You', :user_root %></li>
+<li<%= putActiveClass("cards") %>><%= link_to 'All Cards', :cards %></li>
+<li<%= putActiveClass("users") %>><%= link_to 'All Users', :users %></li>
+</ul>
+<% end %>
+
+
+<% if current_user %>
+<ul class="nav pull-right">
+<li class="divider-vertical"></li>
+<li class="">
+<%= link_to 'Sign out', :destroy_user_session %>
+</li>
+</ul>
+<% end %>
+
+</div>
+</div>
+</div>
+</div>
+
