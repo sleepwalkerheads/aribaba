@@ -36,6 +36,11 @@ class User < ActiveRecord::Base
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
   
+  validates :username,
+    :presence => true,
+    :uniqueness => true,
+    :length => { :minimum => 3, :maximum => 16 }
+  
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)

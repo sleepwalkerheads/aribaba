@@ -27,6 +27,11 @@
 {
 	width:300px;
 }
+
+.container-cards table input
+{
+	width:auto;
+}
 .container-cards #card_comment
 {
 	height:200px !important;

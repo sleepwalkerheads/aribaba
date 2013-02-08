@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
   
-  before_filter :authenticate_user!
+  # !!!:
+  # before_filter :authenticate_user!
   
   # def auth_user
   #   redirect_to :sing_in unless user_signed_in?

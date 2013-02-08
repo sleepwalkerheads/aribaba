@@ -47,9 +47,9 @@ module ApplicationHelper
     html << '<td>'+ mComment +'</td>'
     html << '<td>'+ mLatitude + ", " + mLongitude +'</td>'
     html << '<td>'+ (mActive ? '<span class="active">active</span>' : '<span class="inactive">inactive</span>') +'</td>'
-    html << '<td>'+ (link_to 'Show card', card) +'</td>'
-    html << '<td>'+ (link_to 'Edit', edit_card_path(card)) +'</td>'
-    html << '<td>'+ (link_to 'Delete', card, :method => :delete, :data => { :confirm => 'Are you sure?' }) +'</td>'
+    html << '<td>'+ (link_to 'Show', card, :class=>'btn btn-primary') +'</td>'
+    html << '<td>'+ (link_to 'Edit', edit_card_path(card), :class=>'btn') +'</td>'
+    html << '<td>'+ (button_to 'Delete', card, :method => :delete, :class=>'btn btn-inverse', :data => { :confirm => 'Are you sure?' }) +'</td>'
     html << '</tr>'
     
     h html.join.html_safe
