@@ -18,9 +18,9 @@ DeviseTest::Application.routes.draw do
   
   
   ## card情報一覧
-  resources :cards
-  #     cards GET    /cards(.:format)          cards#index
-  #           POST   /cards(.:format)          cards#create
+  # resources :cards
+  get '/cards(.:format)', :to => 'cards#index'
+  post '/cards(.:format)', :to => 'cards#create'
   #  new_card GET    /cards/new(.:format)      cards#new
   # edit_card GET    /cards/:id/edit(.:format) cards#edit
   #      card GET    /cards/:id(.:format)      cards#show
